@@ -17,7 +17,7 @@
     .hero-section {
       background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
       color: #ffffff;
-      padding: 48px 20px 42px;
+      padding: 44px 20px 38px;
       text-align: center;
       box-shadow: 0 4px 14px rgba(2, 132, 199, 0.2);
     }
@@ -32,29 +32,11 @@
       font-size: 1.05rem;
       font-weight: 500;
     }
-    .search-wrapper {
-      max-width: 440px;
-      margin: 22px auto 0;
-    }
-    .search-input {
-      border-radius: 50px;
-      padding: 10px 20px;
-      font-size: 0.95rem;
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      outline: none;
-    }
-    .search-input:focus {
-      background: #ffffff;
-      border-color: #ffffff;
-      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35);
-    }
     .app-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 24px;
+      padding: 22px;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -70,14 +52,17 @@
       border-color: #0284c7;
       color: inherit;
     }
-    .app-icon {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
-      display: inline-block;
-      line-height: 1;
+    .app-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .app-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #0f172a;
       margin-bottom: 8px;
@@ -90,19 +75,29 @@
       color: #0284c7;
     }
     .app-desc {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #64748b;
       flex-grow: 1;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       line-height: 1.5;
     }
+    .card-footer-actions {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: auto;
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .btn-readme {
-      background: #f1f5f9;
+      background: #f8fafc;
       color: #334155;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       border-radius: 6px;
-      padding: 7px 12px;
+      padding: 6px 12px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -110,6 +105,7 @@
       text-decoration: none;
       border: 1px solid #cbd5e1;
       transition: all 0.15s ease;
+      white-space: nowrap;
     }
     .btn-readme:hover {
       background: #e2e8f0;
@@ -120,9 +116,9 @@
       background: #0284c7;
       color: #ffffff;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       border-radius: 6px;
-      padding: 7px 14px;
+      padding: 6px 14px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -130,6 +126,7 @@
       text-decoration: none;
       border: none;
       transition: background 0.15s ease;
+      white-space: nowrap;
     }
     .btn-launch:hover {
       background: #0369a1;
@@ -144,15 +141,6 @@
       align-items: center;
       gap: 8px;
     }
-    footer {
-      margin-top: auto;
-      padding: 24px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #94a3b8;
-      border-top: 1px solid #e2e8f0;
-      background: #ffffff;
-    }
   </style>
 </head>
 <body>
@@ -160,8 +148,8 @@
   <header class="hero-section">
     <div class="container">
       <h1 class="hero-title">Vincent Borghi</h1>
-      <p class="hero-subtitle mb-2">Web Applications &amp; Tools Directory</p>
-      <div class="mb-3">
+      <p class="hero-subtitle mb-3">Web Applications &amp; Tools Directory</p>
+      <div>
         <a href="https://github.com/vincentborghi" class="btn btn-outline-light btn-sm px-3 rounded-pill" target="_blank" rel="noopener" title="Visit GitHub Profile">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-github me-1" viewBox="0 0 16 16" style="vertical-align: -2px;">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -169,74 +157,113 @@
           github.com/vincentborghi
         </a>
       </div>
-      <div class="search-wrapper">
-        <input type="text" id="appSearchInput" class="form-control search-input" placeholder="Search applications..." oninput="filterApps()">
-      </div>
     </div>
   </header>
 
   <main class="container my-5">
     <div class="section-title">
-      <span>🚀 Available Applications</span>
-      <span class="badge bg-secondary rounded-pill" id="appCountBadge">3</span>
+      <span>Available Applications</span>
+      <span class="badge bg-secondary rounded-pill" id="appCountBadge">4</span>
     </div>
 
     <div class="row g-4" id="appsContainer">
       
       <!-- n150bench -->
-      <div class="col-md-6 col-lg-4 app-item" data-repo="n150bench" data-keywords="n150bench cpu processor benchmark geekbench passmark hardware mini pc laptop intel amd">
+      <div class="col-md-6 col-lg-4 app-item" data-repo="n150bench">
         <div class="app-card">
           <div>
-            <div class="app-icon">⚡</div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="app-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0284c7" viewBox="0 0 16 16">
+                  <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+                </svg>
+              </div>
+              <span class="badge bg-light text-primary border border-primary-subtle">Hardware / Bench</span>
+            </div>
             <h2 class="app-title"><a href="/n150bench/" class="app-title-link">n150bench</a></h2>
             <p class="app-desc">CPU Performance &amp; Benchmark Comparison for Mini PCs and Laptops against Intel Processor N150.</p>
           </div>
-          <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
-            <span class="badge bg-light text-primary border border-primary-subtle">Hardware / Bench</span>
-            <div class="d-flex gap-2 align-items-center card-actions">
-              <a href="https://github.com/vincentborghi/n150bench#readme" class="btn-readme" target="_blank" rel="noopener" title="View README documentation on GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
-                  <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
-                  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
-                </svg>
-                Readme
-              </a>
-              <a href="/n150bench/" class="btn-launch" title="Launch Web Application">Launch App ➔</a>
-            </div>
+          <div class="card-footer-actions">
+            <a href="https://github.com/vincentborghi/n150bench#readme" class="btn-readme" target="_blank" rel="noopener" title="View README documentation on GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+              </svg>
+              Readme
+            </a>
+            <a href="/n150bench/" class="btn-launch" title="Launch Web Application">Launch App ➔</a>
           </div>
         </div>
       </div>
 
       <!-- pulser -->
-      <div class="col-md-6 col-lg-4 app-item" data-repo="pulser" data-keywords="pulser metronome tuner music audio bpm tempo instrument sound">
+      <div class="col-md-6 col-lg-4 app-item" data-repo="pulser">
         <div class="app-card">
           <div>
-            <div class="app-icon">🎵</div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="app-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#16a34a" viewBox="0 0 16 16">
+                  <path d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+                  <path fill-rule="evenodd" d="M9 3v10H8V3h1z"/>
+                  <path d="M8 2.82a1 1 0 0 1 .804-.98l3-1A1 1 0 0 1 13 1.82V4a1 1 0 0 1-1.196.98l-3-1A1 1 0 0 1 8 3V2.82z"/>
+                </svg>
+              </div>
+              <span class="badge bg-light text-success border border-success-subtle">Music / Audio</span>
+            </div>
             <h2 class="app-title"><a href="/pulser/" class="app-title-link">Pulser</a></h2>
             <p class="app-desc">Metronome and Instrument Tuner web application for musicians.</p>
           </div>
-          <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
-            <span class="badge bg-light text-success border border-success-subtle">Music / Audio</span>
-            <div class="d-flex gap-2 align-items-center card-actions">
-              <a href="/pulser/" class="btn-launch" title="Launch Web Application">Launch App ➔</a>
+          <div class="card-footer-actions">
+            <a href="/pulser/" class="btn-launch" title="Launch Web Application">Launch App ➔</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- uext -->
+      <div class="col-md-6 col-lg-4 app-item" data-repo="uext">
+        <div class="app-card">
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="app-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#7c3aed" viewBox="0 0 16 16">
+                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                </svg>
+              </div>
+              <span class="badge bg-light border" style="color: #7c3aed; border-color: #ddd6fe !important;">Chrome Extension</span>
             </div>
+            <h2 class="app-title"><a href="https://github.com/vincentborghi/uext" target="_blank" rel="noopener" class="app-title-link">uext (My Extras)</a></h2>
+            <p class="app-desc">Event date extractor &amp; scheduler assistant for Google Calendar, FIP live metadata &amp; music library, BnF remote access.</p>
+          </div>
+          <div class="card-footer-actions">
+            <a href="https://github.com/vincentborghi/uext#readme" class="btn-readme" target="_blank" rel="noopener" title="View README documentation on GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+              </svg>
+              Readme
+            </a>
+            <a href="https://github.com/vincentborghi/uext" target="_blank" rel="noopener" class="btn-launch" style="background: #7c3aed;" title="View repository on GitHub">View Repo ➔</a>
           </div>
         </div>
       </div>
 
       <!-- GitHub Profile Card -->
-      <div class="col-md-6 col-lg-4 app-item" data-keywords="github vincentborghi profile repositories git code source projects">
+      <div class="col-md-6 col-lg-4 app-item">
         <div class="app-card">
           <div>
-            <div class="app-icon">🐙</div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="app-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#24292f" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+              </div>
+              <span class="badge bg-light text-dark border">Source Code</span>
+            </div>
             <h2 class="app-title"><a href="https://github.com/vincentborghi" class="app-title-link" target="_blank" rel="noopener">GitHub Profile</a></h2>
             <p class="app-desc">Explore public repositories, source code, and open source projects on GitHub.</p>
           </div>
-          <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
-            <span class="badge bg-light text-dark border">Source Code</span>
-            <div class="card-actions">
-              <a href="https://github.com/vincentborghi" class="btn-launch" style="background: #24292f;" target="_blank" rel="noopener">View Profile ➔</a>
-            </div>
+          <div class="card-footer-actions">
+            <a href="https://github.com/vincentborghi" class="btn-launch" style="background: #24292f;" target="_blank" rel="noopener">View Profile ➔</a>
           </div>
         </div>
       </div>
@@ -244,32 +271,8 @@
     </div>
   </main>
 
-  <footer>
-    Hosted on GitHub Pages • <a href="https://github.com/vincentborghi" class="text-decoration-none text-muted" target="_blank" rel="noopener">github.com/vincentborghi</a>
-  </footer>
-
   <script>
-    function filterApps() {
-      const q = document.getElementById("appSearchInput").value.trim().toLowerCase();
-      const items = document.querySelectorAll(".app-item");
-      let visibleCount = 0;
-
-      items.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        const kw = (item.dataset.keywords || "").toLowerCase();
-        if (!q || text.includes(q) || kw.includes(q)) {
-          item.style.display = "";
-          visibleCount++;
-        } else {
-          item.style.display = "none";
-        }
-      });
-
-      const badge = document.getElementById("appCountBadge");
-      if (badge) badge.textContent = visibleCount;
-    }
-
-    // Make cards clickable to launch their app, while letting internal links/buttons work independently
+    // Make cards clickable to launch their app or repo, while letting internal links/buttons work independently
     document.addEventListener("click", function(e) {
       const card = e.target.closest(".app-card");
       if (!card) return;
@@ -325,7 +328,7 @@
     // Auto-check any static cards without a readme yet (e.g. if pulser gets a README later)
     document.querySelectorAll(".app-item[data-repo]").forEach(item => {
       const repoName = item.dataset.repo;
-      const actions = item.querySelector(".card-actions");
+      const actions = item.querySelector(".card-footer-actions");
       if (repoName && actions && !actions.querySelector(".btn-readme")) {
         attachReadmeIfAvailable(repoName, actions);
       }
@@ -337,32 +340,35 @@
       .then(repos => {
         if (!Array.isArray(repos)) return;
         const container = document.getElementById("appsContainer");
-        const knownRepos = new Set(["n150bench", "pulser", "vincentborghi.github.io"]);
+        const knownRepos = new Set(["n150bench", "pulser", "uext", "vincentborghi.github.io"]);
 
         repos.forEach(repo => {
           if (repo.has_pages && !knownRepos.has(repo.name)) {
             const col = document.createElement("div");
             col.className = "col-md-6 col-lg-4 app-item";
             col.dataset.repo = repo.name;
-            col.dataset.keywords = `${repo.name} ${repo.description || ''}`.toLowerCase();
             col.innerHTML = `
               <div class="app-card">
                 <div>
-                  <div class="app-icon">🚀</div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="app-icon-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0284c7" viewBox="0 0 16 16">
+                        <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                      </svg>
+                    </div>
+                    <span class="badge bg-light text-secondary border">Web App</span>
+                  </div>
                   <h2 class="app-title"><a href="/${repo.name}/" class="app-title-link">${repo.name}</a></h2>
                   <p class="app-desc">${repo.description || 'Web application hosted on GitHub Pages.'}</p>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
-                  <span class="badge bg-light text-secondary border">Web App</span>
-                  <div class="d-flex gap-2 align-items-center card-actions">
-                    <a href="/${repo.name}/" class="btn-launch" title="Launch Web Application">Launch App ➔</a>
-                  </div>
+                <div class="card-footer-actions">
+                  <a href="/${repo.name}/" class="btn-launch" title="Launch Web Application">Launch App ➔</a>
                 </div>
               </div>
             `;
             container.appendChild(col);
 
-            const actions = col.querySelector(".card-actions");
+            const actions = col.querySelector(".card-footer-actions");
             attachReadmeIfAvailable(repo.name, actions, repo.default_branch);
           }
         });
