@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vincent Borghi — Web Applications Hub</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      padding: 48px 20px 42px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.2);
+    }
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+    .hero-subtitle {
+      color: #e0f2fe;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .search-wrapper {
+      max-width: 440px;
+      margin: 22px auto 0;
+    }
+    .search-input {
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      outline: none;
+    }
+    .search-input:focus {
+      background: #ffffff;
+      border-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35);
+    }
+    .app-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      border-color: #0284c7;
+      color: inherit;
+    }
+    .app-icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      display: inline-block;
+      line-height: 1;
+    }
+    .app-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .app-desc {
+      font-size: 0.92rem;
+      color: #64748b;
+      flex-grow: 1;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+    .btn-launch {
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.88rem;
+      border-radius: 6px;
+      padding: 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: none;
+      transition: background 0.15s ease;
+    }
+    .app-card:hover .btn-launch {
+      background: #0369a1;
+    }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    footer {
+      margin-top: auto;
+      padding: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid #e2e8f0;
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Vincent Borghi</h1>
+      <p class="hero-subtitle mb-0">Web Applications &amp; Tools Directory</p>
+      <div class="search-wrapper">
+        <input type="text" id="appSearchInput" class="form-control search-input" placeholder="Search applications..." oninput="filterApps()">
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="section-title">
+      <span>🚀 Available Applications</span>
+      <span class="badge bg-secondary rounded-pill" id="appCountBadge">2</span>
+    </div>
+
+    <div class="row g-4" id="appsContainer">
+      
+      <!-- n150bench -->
+      <div class="col-md-6 col-lg-4 app-item" data-keywords="n150bench cpu processor benchmark geekbench passmark hardware mini pc laptop intel amd">
+        <a href="/n150bench/" class="app-card">
+          <div>
+            <div class="app-icon">⚡</div>
+            <h2 class="app-title">n150bench</h2>
+            <p class="app-desc">CPU Performance &amp; Benchmark Comparison for Mini PCs and Laptops against Intel Processor N150.</p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span class="badge bg-light text-primary border border-primary-subtle">Hardware / Bench</span>
+            <span class="btn-launch">Launch App ➔</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- pulser -->
+      <div class="col-md-6 col-lg-4 app-item" data-keywords="pulser metronome tuner music audio bpm tempo instrument sound">
+        <a href="/pulser/" class="app-card">
+          <div>
+            <div class="app-icon">🎵</div>
+            <h2 class="app-title">Pulser</h2>
+            <p class="app-desc">Metronome and Instrument Tuner web application for musicians.</p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span class="badge bg-light text-success border border-success-subtle">Music / Audio</span>
+            <span class="btn-launch">Launch App ➔</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    Hosted on GitHub Pages • <a href="https://github.com/vincentborghi" class="text-decoration-none text-muted" target="_blank" rel="noopener">github.com/vincentborghi</a>
+  </footer>
+
+  <script>
+    function filterApps() {
+      const q = document.getElementById("appSearchInput").value.trim().toLowerCase();
+      const items = document.querySelectorAll(".app-item");
+      let visibleCount = 0;
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const kw = (item.dataset.keywords || "").toLowerCase();
+        if (!q || text.includes(q) || kw.includes(q)) {
+          item.style.display = "";
+          visibleCount++;
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      const badge = document.getElementById("appCountBadge");
+      if (badge) badge.textContent = visibleCount;
+    }
+
+    // Auto-discover other repositories with GitHub Pages enabled
+    fetch("https://api.github.com/users/vincentborghi/repos?per_page=100")
+      .then(res => res.json())
+      .then(repos => {
+        if (!Array.isArray(repos)) return;
+        const container = document.getElementById("appsContainer");
+        const knownRepos = new Set(["n150bench", "pulser", "vincentborghi.github.io"]);
+
+        repos.forEach(repo => {
+          if (repo.has_pages && !knownRepos.has(repo.name)) {
+            const col = document.createElement("div");
+            col.className = "col-md-6 col-lg-4 app-item";
+            col.dataset.keywords = `${repo.name} ${repo.description || ''}`.toLowerCase();
+            col.innerHTML = `
+              <a href="/${repo.name}/" class="app-card">
+                <div>
+                  <div class="app-icon">🚀</div>
+                  <h2 class="app-title">${repo.name}</h2>
+                  <p class="app-desc">${repo.description || 'Web application hosted on GitHub Pages.'}</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <span class="badge bg-light text-secondary border">Web App</span>
+                  <span class="btn-launch">Launch App ➔</span>
+                </div>
+              </a>
+            `;
+            container.appendChild(col);
+          }
+        });
+
+        // Update count badge
+        const badge = document.getElementById("appCountBadge");
+        if (badge) badge.textContent = document.querySelectorAll(".app-item").length;
+      })
+      .catch(err => console.error("Could not fetch additional repos:", err));
+  </script>
+</body>
+</html>
