@@ -168,8 +168,8 @@
 
     <div class="row g-4" id="appsContainer">
       
-      <!-- n150bench -->
-      <div class="col-md-6 col-lg-4 app-item" data-repo="n150bench">
+      <!-- cpubench -->
+      <div class="col-md-6 col-lg-4 app-item" data-repo="cpubench">
         <div class="app-card">
           <div>
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -180,18 +180,18 @@
               </div>
               <span class="badge bg-light text-primary border border-primary-subtle">Hardware / Bench</span>
             </div>
-            <h2 class="app-title"><a href="/n150bench/" class="app-title-link">n150bench</a></h2>
+            <h2 class="app-title"><a href="/cpubench/" class="app-title-link">cpubench</a></h2>
             <p class="app-desc">CPU Performance &amp; Benchmark Comparison for Mini PCs and Laptops against Intel Processor N150.</p>
           </div>
           <div class="card-footer-actions">
-            <a href="https://github.com/vincentborghi/n150bench#readme" class="btn-readme" target="_blank" rel="noopener" title="View README documentation on GitHub">
+            <a href="https://github.com/vincentborghi/cpubench#readme" class="btn-readme" target="_blank" rel="noopener" title="View README documentation on GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
                 <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
               </svg>
               Readme
             </a>
-            <a href="/n150bench/" class="btn-launch" title="Launch Web Application">Launch App ➔</a>
+            <a href="/cpubench/" class="btn-launch" title="Launch Web Application">Launch App ➔</a>
           </div>
         </div>
       </div>
@@ -340,7 +340,7 @@
       .then(repos => {
         if (!Array.isArray(repos)) return;
         const container = document.getElementById("appsContainer");
-        const knownRepos = new Set(["n150bench", "pulser", "uext", "vincentborghi.github.io"]);
+        const knownRepos = new Set(["cpubench", "pulser", "uext", "vincentborghi.github.io"]);
 
         repos.forEach(repo => {
           if (repo.has_pages && !knownRepos.has(repo.name)) {
